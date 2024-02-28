@@ -2,6 +2,7 @@ import math
 
 punkty = {"A": [1, 1], "B": [5,8], "C": [7, 12], "D": [2, 9], "E": [7, 2], "F": [1, 12], "G": [4, 2]}
 startowy = "G"
+kordynaty_strt = punkty[startowy]
 trasa = [startowy]
 suma_odleglosci = []
 
@@ -10,6 +11,8 @@ def odleglosc(a, b):
 
 def szukanie_trasy(strt):
     if len(punkty) == 1:
+        trasa.append(startowy)
+        suma_odleglosci.append(odleglosc(punkty[strt], kordynaty_strt))
         return 0
     odleglosci = {}
     for klucz, wartosc in punkty.items():
